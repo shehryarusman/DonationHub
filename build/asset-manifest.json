@@ -1,16 +1,15 @@
 {
   "files": {
-    "main.css": "/DonationHub/static/css/main.073c9b0a.css",
-    "main.js": "/DonationHub/static/js/main.bc3549a7.js",
+    "main.css": "/DonationHub/static/css/main.6c925abf.css",
+    "main.js": "/DonationHub/static/js/main.d0fafaa9.js",
     "static/js/787.50f403b4.chunk.js": "/DonationHub/static/js/787.50f403b4.chunk.js",
-    "static/media/logo.svg": "/DonationHub/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/DonationHub/index.html",
-    "main.073c9b0a.css.map": "/DonationHub/static/css/main.073c9b0a.css.map",
-    "main.bc3549a7.js.map": "/DonationHub/static/js/main.bc3549a7.js.map",
+    "main.6c925abf.css.map": "/DonationHub/static/css/main.6c925abf.css.map",
+    "main.d0fafaa9.js.map": "/DonationHub/static/js/main.d0fafaa9.js.map",
     "787.50f403b4.chunk.js.map": "/DonationHub/static/js/787.50f403b4.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.bc3549a7.js"
+    "static/css/main.6c925abf.css",
+    "static/js/main.d0fafaa9.js"
   ]
 }
