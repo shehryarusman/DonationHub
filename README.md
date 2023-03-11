@@ -1,2 +1,2 @@
-# CoCal
-Web app to make scheduling easy
+# DonationHub
+Donations made easy
