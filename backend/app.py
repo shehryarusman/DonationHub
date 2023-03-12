@@ -81,8 +81,10 @@ def mlbackend():
 
 @app.route('/news', methods = ['GET'])
 def get_posts():
-    f = open('news.json')
-    return jsonify(f)
+    with open("news.json", "r") as json_file:
+        json_data = json.load(json_file)
+    return jsonify(json_data)
+
 
 if __name__ == '__main__':
     app.run("debug=True")
