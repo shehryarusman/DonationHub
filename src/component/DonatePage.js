@@ -37,11 +37,16 @@ function DonatePage() {
   const { setDonationValue } = useContext(DonationContext);
 
   const getUserDonation = () => {
-    let donationValue = []
-    donationValue.push({'location': selectedQuantity, 'category': selectedFruit, 'item': itemQuantity})
+    let totalItems = 0;
+    Object.values(itemQuantity).forEach(quantity => {
+      totalItems += Number(quantity);
+    });
+    let donationValue = [ totalItems ];
     setDonationValue(donationValue);
     navigate('/map');
   }
+  
+
   
 
   return (
