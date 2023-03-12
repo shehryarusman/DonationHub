@@ -1,4 +1,7 @@
 import { React, useReducer, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+
 import category from '../data';
 
 const initialState = {
@@ -29,11 +32,14 @@ function DonatePage() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { selectedFruit, selectedCategoryItem, selectedQuantity,itemQuantity } = state;
   const categoryData = category;
+  const navigate = useNavigate();
+
 
   const getUserDonation = () => {
     let donationValue = []
     donationValue.push({'location': selectedQuantity, 'category': selectedFruit, 'item': itemQuantity})
-    console.log(donationValue)
+    navigate('/map');
+
   }
 
   return (
@@ -104,8 +110,8 @@ function DonatePage() {
         </div>
     )}
 
-      
-      {/*selectedCategoryItem !== '-- select category --' && (
+
+      {selectedCategoryItem !== '-- select category --' && (
         <div className='range-wrapper'>
           <label>Select a distance: </label>
           <input
@@ -124,7 +130,7 @@ function DonatePage() {
           </div>
         </div>
 
-          )*/}
+      )}
 
       <button type='button' onClick={getUserDonation}>Continue</button>
     </div>

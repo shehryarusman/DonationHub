@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Donation Center 1",
+    "address": "123 Main St, Anytown USA",
+    "phone": "(123) 456-7890",
+    "impact": 78,
+    "hours": "0900 - 2100"
+  },
+  {
+    "name": "Donation Center 2",
+    "address": "456 Oak Ave, Anytown USA",
+    "phone": "(123) 456-7890",
+    "impact": 55,
+    "hours": "0900 - 2100"
+  },
+  {
+    "name": "Donation Center 3",
+    "address": "789 Elm St, Anytown USA",
+    "phone": "(123) 456-7890",
+    "impact": 24,
+    "hours": "0900 - 2100"
+  },
+  {
+      "name": "Donation Center 4",
+      "address": "3175 JFK Boulevard USA",
+      "phone": "(445) 237-5934",
+      "impact": 10,
+      "hours": "0900 - 2100"
+  }
+]
