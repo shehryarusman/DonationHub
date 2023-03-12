@@ -39,7 +39,7 @@ def summariser(url):
 def newsparser():
     url = "https://newsapi.org/v2/everything?"
     parameters = {
-        'q' : 'Donations OR Charity OR Volunteer OR Volunteering OR Volunteers OR Volunteered OR Volunteered OR Altruism OR Altruistic OR Altruistically OR\
+        'q' : 'Donations OR Charity OR Volunteer OR Volunteering OR Volunteers OR Volunteered OR Altruism OR Altruistic OR Altruistically OR\
             Philanthropy OR Philanthropic OR Philanthropically OR Philanthropist OR Philanthropists OR Philanthropies \
             Giving OR Gave OR Gave OR Given OR Giving OR Giver OR Give \
                 Nonprofit OR Nonprofits OR Fundraising OR Fundraiser OR Community OR Service',
