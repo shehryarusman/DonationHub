@@ -3,9 +3,9 @@ import { React, useContext,useEffect, useState} from 'react';
 import { DonationContext } from './DonationContext';
 
 function getColor(impact) {
-  if (impact > 10) {
+  if (impact > 15) {
     return "green";
-  } else if (impact > 7) {
+  } else if (impact > 10) {
     return "#F9DC5C";
   } else if (impact > 5) {
     return "orange";
