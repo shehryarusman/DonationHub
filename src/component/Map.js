@@ -27,7 +27,7 @@ function Map() {
     }).addTo(mymap);
 
     const computedData = data.map((item) => {
-      const impact = computeImpact(item.stock, 4, item.need);
+      const impact = computeImpact(item.stock, donationValue, item.need);
       return {
         ...item,
         impact
@@ -46,7 +46,7 @@ function Map() {
     return () => {
       mymap.remove();
     };
-  }, []);
+  }, [donationValue]);
 
   function computeImpact(stock, donated, need){
     return ((stock + donated + need)-(stock+need))/(stock + need)*100;
