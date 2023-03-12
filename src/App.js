@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes} from 'react-router-dom';
 import Home from './component/Home';
 import "./App.css";
 import DonatePage from './component/DonatePage';
@@ -10,8 +10,9 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/donatepage" element={<DonatePage />} />
+        <Route path="/" element={<Home/>} />
+        <Route path="/donatepage" element={<DonatePage/>} />
+        <Route path="*" element={<Home/>} />
       </Routes>
     </BrowserRouter>
   );
