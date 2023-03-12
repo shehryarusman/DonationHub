@@ -17,8 +17,13 @@ function App() {
         <Route path="/" element={<Home/>} />
         <Route path="/news" element={<News/>} />
         <Route path="/donatepage" element={<DonatePage/>} />
+<<<<<<< HEAD
         <Route path="/map" element={<Map donationValue={0}/>} />
         <Route path="/center" element={<Center />}/>
+=======
+        <Route path="/map" element={<Map />} />
+        
+>>>>>>> 3856c07d07657111dcef488cce37a875aeecb156
       </Routes>
     </BrowserRouter>
   );

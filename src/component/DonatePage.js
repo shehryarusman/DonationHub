@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { React, useReducer, useState } from 'react';
+=======
+import { React, useReducer } from 'react';
+>>>>>>> 3856c07d07657111dcef488cce37a875aeecb156
 import { useNavigate } from 'react-router-dom';
 
 
@@ -37,12 +41,16 @@ function DonatePage() {
   const getUserDonation = () => {
     let donationValue = []
     donationValue.push({'location': selectedQuantity, 'category': selectedFruit, 'item': itemQuantity})
+<<<<<<< HEAD
     let sum = 0;
     for (let property in donationValue[0].item){
       sum += parseInt(property);
     }
     console.log(sum);
     navigate('/map', {sum});
+=======
+    navigate('/map');
+>>>>>>> 3856c07d07657111dcef488cce37a875aeecb156
   }
 
   return (
