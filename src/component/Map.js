@@ -1,5 +1,10 @@
+<<<<<<< Updated upstream
 import {React, useEffect, useState} from "react";
+=======
+>>>>>>> Stashed changes
 import data from "../data.json";
+import { React, useContext } from 'react';
+import { DonationContext } from './DonationContext';
 
 function getColor(impact) {
   if (impact > 10) {
@@ -13,6 +18,7 @@ function getColor(impact) {
   }
 }
 
+<<<<<<< Updated upstream
 function Map({sum}) {
   console.log(sum);
   /*const [centerdata, setCenterdata] = useState([]);
@@ -56,6 +62,13 @@ function Map({sum}) {
   }
 
  return (
+=======
+function Map() {
+  const { donationValue } = useContext(DonationContext);
+  console.log(donationValue);
+
+  return (
+>>>>>>> Stashed changes
     <div className="Map">
       <h2 className="title">Donation Centers Near You</h2>
       <div className="Map-Container">
