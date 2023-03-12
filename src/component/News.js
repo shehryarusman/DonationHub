@@ -1,30 +1,41 @@
-import { React, useEffect, useState} from 'react'
-import axios from 'axios';
+import { useState, useEffect } from 'react';
 
 function News() {
-    const [data, setData] = useState([]);
+  const [articles, setArticles] = useState([]);
 
-    useEffect(() => {
-        fetch('/news')
-            .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error('Network response was not ok.');
-            })
-            .then(data => {
-            setData(data);
-            console.log(data)
-            })
-            .catch(error => {
-            console.error('There was a problem with the fetch operation:', error);
-            });
-        }, []);
+  useEffect(() => {
+    async function fetchNews() {
+      try {
+        const response = await fetch('http://127.0.0.1:5000/news',{
+            mode: 'cors',
+            method: 'GET',
+            headers:{
+                'Content-Type': 'application/json'
+            },
+        }); // Replace with the URL of your Flask server
+        if (!response.ok) {
+          throw new Error('Failed to fetch news');
+        }
+        const data = await response.json();
+        setArticles(data.articles);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchNews();
+  }, []);
+
   return (
-    <div>
-        <h1>Welcome to today News</h1>
+    <div className='news-page'>
+      <h1>Latest News</h1>
+      {/* {articles.map((article) => (
+        <div key={article.id}>
+          <h2>{article.title}</h2>
+          <p>{article.summary}</p>
+        </div>
+      ))} */}
     </div>
-  )
+  );
 }
 
-export default News
+export default News;
