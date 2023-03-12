@@ -11,9 +11,9 @@ function App() {
     <BrowserRouter>
       <Nav />
       <Routes>
+        <Route path="/news" element={<News/>} />
         <Route path="/" element={<Home/>} />
         <Route path="/donatepage" element={<DonatePage/>} />
-        <Route path="/news" element={<News/>} />
       </Routes>
     </BrowserRouter>
   );

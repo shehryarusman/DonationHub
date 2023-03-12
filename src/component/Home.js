@@ -33,12 +33,12 @@ function Home() {
         </h1>
       </div>
       <section id="features">
-        <div class="features-inner">
-          <div class="features-group-left">
-            <div class="features-image">
+        <div className="features-inner">
+          <div className="features-group-left">
+            <div className="features-image">
               <img src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80" />
             </div>
-            <div class="features-text">
+            <div className="features-text">
               <h1>Our Mission: Making a Difference in Our Community</h1>
               <p>
                 Our mission at DonationHub is rooted in empathy and a deep
@@ -49,11 +49,11 @@ function Home() {
               </p>
             </div>
           </div>
-          <div class="features-group-right">
-            <div class="features-image inverted">
+          <div className="features-group-right">
+            <div className="features-image inverted">
               <img src="https://images.unsplash.com/photo-1599059813005-11265ba4b4ce?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" />
             </div>
-            <div class="features-text inverted">
+            <div className="features-text inverted">
               <h1>Our Impact</h1>
               <p>
                 We're proud of the impact that we've made in our community over
@@ -64,11 +64,11 @@ function Home() {
               </p>
             </div>
           </div>
-          <div class="features-group-left">
-            <div class="features-image">
+          <div className="features-group-left">
+            <div className="features-image">
               <img src="https://cdn.hourdetroit.com/wp-content/uploads/sites/20/2021/11/clothing-donations-696x465.jpg" />
             </div>
-            <div class="features-text">
+            <div className="features-text">
               <h1>Get Involved: Join Our Community of Supporters</h1>
               <p>
                 We believe that everyone has the power to make a difference, no
@@ -82,11 +82,11 @@ function Home() {
               </p>
             </div>
           </div>
-          <div class="features-group-right">
-            <div class="features-image inverted">
+          <div className="features-group-right">
+            <div className="features-image inverted">
               <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80" />
             </div>
-            <div class="features-text inverted">
+            <div className="features-text inverted">
               <h1>Why We Do it?</h1>
               <p>
                 Donating food and clothes is more than just a simple act of
