@@ -93,3 +93,17 @@
 .Item-Hours {
     margin: 1px 0px;
 }
+
+.Map-List {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px; /* set a fixed width for the container element */
+    margin: 0 auto;
+  }
+  
+  .Map-List-Card {
+    width: 100%; /* set a width of 100% for each child element */
+    margin: 10px;
+  }
+  
