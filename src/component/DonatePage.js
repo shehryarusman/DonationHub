@@ -1,4 +1,4 @@
-import { React, useReducer, useEffect } from 'react';
+import { React, useReducer } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 
@@ -39,7 +39,6 @@ function DonatePage() {
     let donationValue = []
     donationValue.push({'location': selectedQuantity, 'category': selectedFruit, 'item': itemQuantity})
     navigate('/map');
-
   }
 
   return (

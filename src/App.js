@@ -17,6 +17,7 @@ function App() {
         <Route path="/news" element={<News/>} />
         <Route path="/donatepage" element={<DonatePage/>} />
         <Route path="/map" element={<Map />} />
+        
       </Routes>
     </BrowserRouter>
   );
