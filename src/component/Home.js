@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import "./Home.css";
+import "../Home.css";
 
 function Home() {
   const index = 0;
