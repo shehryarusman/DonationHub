@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Home from './Home';
+import Home from './component/Home';
 import "./App.css";
 import DonatePage from './component/DonatePage';
-import Nav from './Nav';
+import Nav from './component/Nav';
 
 function App() {
   return (

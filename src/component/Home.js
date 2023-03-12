@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import Nav from "./Nav";
 import "./Home.css";
 
 function Home() {
@@ -26,7 +25,6 @@ function Home() {
   }, []);
   return (
     <div className="Home">
-      <Nav />
       <div className="Background">
         <h1 className="title">
           Help Us Make a Positive Impact
