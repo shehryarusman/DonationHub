@@ -1,11 +1,15 @@
 from flask import Flask, jsonify
+from flask_cors import CORS
+
 import pandas as pd
 import numpy as np
 import random
 import pickle
 import requests
+import json
 
 app = Flask(__name__)
+CORS(app)
 
 @app.route('/')
 def index():
