@@ -77,7 +77,7 @@ function Center() {
 
   return (
     <div>
-      <h1 className="Center-Name">Center: XYZ</h1>
+      <h1 className="Center-Name">A New Life Recovery & Education Center</h1>
       <div className="form-container">
         {!stockSubmitted && (
           <form onSubmit={handleStockSubmit}>

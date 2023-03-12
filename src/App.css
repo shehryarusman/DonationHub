@@ -131,3 +131,5 @@ span {
     transform: rotate(360deg);
   }
 }
+
+#map { height: 500px; }

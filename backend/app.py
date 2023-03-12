@@ -42,6 +42,7 @@ def getLocalX_test(id, zipcode):
 
 @app.route('/centers', methods=['GET'])
 def mlbackend():
+    print("running ml backend")
     model = pickle.load(open("TodayNeedPredictor.sav", "rb"))
     i=0
     response = {}
@@ -66,11 +67,11 @@ def mlbackend():
             response[i]= {"lat": lat, 
                     "long": longitude, 
                     "need": need,
-                    "current-stock": random.randint(0,50),
-                    "contact-name": data["Organization Name"][i], 
-                    "contact-address": data["Address"][i], 
-                    "contact-hours": hours,
-                    "contact-phone": data["Phone Number"][i]}
+                    "stock": random.randint(0,50),
+                    "name": data["Organization Name"][i], 
+                    "address": data["Address"][i], 
+                    "hours": hours,
+                    "phone": data["Phone Number"][i]}
         i+=1
 
     return jsonify(response)
