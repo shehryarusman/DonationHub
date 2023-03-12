@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import random
 import pickle
-import requests
+import json
 
 app = Flask(__name__)
 
@@ -19,26 +19,18 @@ def expected(x, poverty):
         poverty = 1000
     return int(func(x)*5*(poverty/24376))
 
-def getDailyTemps(latitude, longitude):
-  start_date = '2022-03-01'
-  end_date = '2023-03-01'
+def getDailyTemps(id):
+    f = open("temps.json", "r")
+    temps = json.load(f)
+    print(temps)
+    return temps[str(id)] 
 
-  endpoint = f'https://archive-api.open-meteo.com/v1/archive?latitude={latitude}&longitude={longitude}&start_date={start_date}&end_date={end_date}&daily=temperature_2m_mean&timezone=America%2FNew_York&temperature_unit=fahrenheit'
-
-  api_key = 'YOUR_API_KEY'
-  headers = {'Authorization': f'Bearer {api_key}'}
-
-  response = requests.get(endpoint, headers=headers)
-  data = response.json()
-  return data["daily"]["temperature_2m_mean"]
-
-def getLocalX_test(id, lat, longitude, zipcode):
+def getLocalX_test(id, zipcode):
     X = []
     poverty = pd.read_csv("datasets/Philadelphia-CensusZipCodeTabulationArea.csv")["Value:Count_Person_BelowPovertyLevelInThePast12Months"][id]
     for i in range(0, 365):
         X.append(expected(i, poverty))
-    
-    for t in getDailyTemps(lat, longitude):
+    for t in getDailyTemps(id):
         X.append(t)
     X.pop()
     X.append(poverty)
@@ -57,7 +49,6 @@ def mlbackend():
     currentId = ""
     for latlon in data["LatLon"]:
         currentId = i
-        print(currentId)
         lat = latlon.split(',')[1]
         longitude = latlon.split(',')[0]
         hours=""
@@ -66,7 +57,7 @@ def mlbackend():
         else:
             hours = data["Time: Open"][i] + "-" + data["Time: Close"][i]
         
-        need = int(model.predict(getLocalX_test(currentId, lat, longitude, data["Zip Code"][i]).reshape(1, -1))[0]) - random.randint(0,20)
+        need = int(model.predict(getLocalX_test(currentId, data["Zip Code"][i]).reshape(1, -1))[0]) - random.randint(0,20)
         response[i]= {"lat": lat, 
                 "long": longitude, 
                 "need": need,
