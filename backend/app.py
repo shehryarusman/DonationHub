@@ -66,7 +66,7 @@ def mlbackend():
         else:
             hours = data["Time: Open"][i] + "-" + data["Time: Close"][i]
         
-        need = int(model.predict(getLocalX_test(currentId, lat, longitude, data["Zip Code"][i]).reshape(1, -1))[0])
+        need = int(model.predict(getLocalX_test(currentId, lat, longitude, data["Zip Code"][i]).reshape(1, -1))[0]) - random.randint(0,20)
         response[i]= {"lat": lat, 
                 "long": longitude, 
                 "need": need,
