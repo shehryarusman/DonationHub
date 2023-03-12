@@ -1,9 +1,5 @@
-<<<<<<< Updated upstream
-import {React, useEffect, useState} from "react";
-=======
->>>>>>> Stashed changes
 import data from "../data.json";
-import { React, useContext } from 'react';
+import { React, useContext,useEffect, useState} from 'react';
 import { DonationContext } from './DonationContext';
 
 function getColor(impact) {
@@ -18,57 +14,49 @@ function getColor(impact) {
   }
 }
 
-<<<<<<< Updated upstream
-function Map({sum}) {
-  console.log(sum);
-  /*const [centerdata, setCenterdata] = useState([]);
-
-  useEffect(() => {
-    function getData() {
-      axios({
-        method: "GET",
-        url: "/centers",
-      }).then((response) => {
-        const res = response.data;
-        setCenterdata(res);
-      });
-    }
-    getData();
-  }, []);
-*/
-  useEffect(() => {
-    var L = window.L;
-    var mymap = L.map("map").setView([39.9635841, -75.188334300000], 13);
-    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      maxZoom: 19,
-      attribution:
-        '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>',
-    }).addTo(mymap);
-
-    data.map((item) =>{
-      var m = L.marker([item.lat, item.long]).addTo(mymap);
-  });
-    /*centerdata.map((item) => {
-      const { lat, lon } = item;
-    });*/
-
-    return () => {
-      mymap.remove();
-    };
-  }, []);
-
-  function computeImpact(stock, donated, need){
-    return ((stock + donated + need)-(stock+need))/(stock + need)*100;
-  }
-
- return (
-=======
 function Map() {
   const { donationValue } = useContext(DonationContext);
   console.log(donationValue);
 
+  useEffect(() => {
+    var L = window.L;
+    var mymap = L.map("map").setView([39.9635841, -75.188334300000], 13);
+    L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      
+    
+      maxZoom: 19,
+
+      attribution:
+
+        '&copy; <a href=http://www.openstreetmap.org/copyright>OpenStreetMap</a>',
+
+    }).addTo(mymap);
+
+ 
+
+    data.map((item) =>{
+
+      var m = L.marker([item.lat, item.long]).addTo(mymap);
+
+  });
+
+  return () => {
+
+      mymap.remove();
+
+    };
+
+  }, []);
+
+ 
+
+  function computeImpact(stock, donated, need){
+
+    return ((stock + donated + need)-(stock+need))/(stock + need)*100;
+
+  }
+
   return (
->>>>>>> Stashed changes
     <div className="Map">
       <h2 className="title">Donation Centers Near You</h2>
       <div className="Map-Container">

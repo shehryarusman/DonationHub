@@ -2,7 +2,7 @@ import React from 'react'
 
 function Article({ img, sentiment, source, summary, title, url }) {
     return (
-        <div className="article">
+        <div className="article" key={title}>
           <div className="article-image">
             <img src={img} alt={title} />
           </div>
