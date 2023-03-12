@@ -7,7 +7,9 @@ import DonatePage from './component/DonatePage';
 import Nav from './component/Nav';
 import News from './component/News';
 import Map from './component/Map';
+import Center from './component/Center'
 import { DonationProvider } from './component/DonationContext';
+
 
 function App() {
   return (
@@ -15,10 +17,12 @@ function App() {
       <DonationProvider>
         <Nav />
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="*" element={<Home />} />
           <Route path="/news" element={<News />} />
           <Route path="/donatepage" element={<DonatePage />} />
           <Route path="/map" element={<Map />} />
+          <Route path="/center" element={<Center />} />
+
         </Routes>
       </DonationProvider>
     </BrowserRouter>

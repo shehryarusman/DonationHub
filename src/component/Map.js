@@ -16,8 +16,7 @@ function getColor(impact) {
 
 function Map() {
   const { donationValue } = useContext(DonationContext);
-  console.log(donationValue);
-
+  
   useEffect(() => {
     var L = window.L;
     var mymap = L.map("map").setView([39.9635841, -75.188334300000], 13);
