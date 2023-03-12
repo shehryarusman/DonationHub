@@ -1,13 +1,19 @@
+import React from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Home';
 import "./App.css";
-import Home from "./Home";
-import DonatePage from "./component/DonatePage";
+import DonatePage from './component/DonatePage';
+import Nav from './Nav';
 
 function App() {
   return (
-    <div className="App">
-      <Home />
-      <DonatePage />
-    </div>
+    <BrowserRouter>
+      <Nav />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/donatepage" element={<DonatePage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
