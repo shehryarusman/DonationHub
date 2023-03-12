@@ -1,6 +1,5 @@
 from flask import Flask, jsonify
 from flask_cors import CORS
-
 import pandas as pd
 import numpy as np
 import random
@@ -25,7 +24,7 @@ def expected(x, poverty):
 def getDailyTemps(id):
     f = open("temps.json", "r")
     temps = json.load(f)
-    print(temps)
+    #print(temps)
     return temps[str(id)] 
 
 def getLocalX_test(id, zipcode):
@@ -60,15 +59,18 @@ def mlbackend():
         else:
             hours = data["Time: Open"][i] + "-" + data["Time: Close"][i]
         
-        need = int(model.predict(getLocalX_test(currentId, data["Zip Code"][i]).reshape(1, -1))[0]) - random.randint(0,20)
-        response[i]= {"lat": lat, 
-                "long": longitude, 
-                "need": need,
-                "current-stock": random.randint(0,50),
-                "contact-name": data["Organization Name"][i], 
-                "contact-address": data["Address"][i], 
-                "contact-hours": hours,
-                "contact-phone": data["Phone Number"][i]}
+        need = int(model.predict(getLocalX_test(currentId, data["Zip Code"][i]).reshape(1, -1))[0]) - random.randint(0,40)
+        if(i == 0):
+            response[i]= json.load(open("center1.json", "r"))["0"]
+        else:
+            response[i]= {"lat": lat, 
+                    "long": longitude, 
+                    "need": need,
+                    "current-stock": random.randint(0,50),
+                    "contact-name": data["Organization Name"][i], 
+                    "contact-address": data["Address"][i], 
+                    "contact-hours": hours,
+                    "contact-phone": data["Phone Number"][i]}
         i+=1
 
     return jsonify(response)
