@@ -104,8 +104,8 @@ function DonatePage() {
         </div>
     )}
 
-
-      {selectedCategoryItem !== '-- select category --' && (
+      
+      {/*selectedCategoryItem !== '-- select category --' && (
         <div className='range-wrapper'>
           <label>Select a distance: </label>
           <input
@@ -124,7 +124,7 @@ function DonatePage() {
           </div>
         </div>
 
-      )}
+          )*/}
 
       <button type='button' onClick={getUserDonation}>Continue</button>
     </div>
