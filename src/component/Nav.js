@@ -8,13 +8,13 @@ function Nav() {
       <nav className="fill">
         <ul>
           <li className="nav-item-l">
-            <Link to="/">Home</Link>
+            <Link to="/news">News</Link>
           </li>
           <li className="nav-item-center">
-            <Link to="/donatepage">DonationHub</Link>
+            <Link to="/">DonationHub</Link>
           </li>
           <li className="nav-item-r">
-            <Link to="/donate">Donate</Link>
+            <Link to="/donatepage">Donate</Link>
           </li>
         </ul>
       </nav>
